@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Landing Page</title>
+    <link rel="shortcut icon" href="https://www.chaicode.com/images/cup-logo.svg" type="image/x-icon">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+            height: 100%;
+            background-color: #0c0c139a;
+        }
+        .container {
+            background: linear-gradient(135deg, #8a2be2, #4169e1);
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        .content {
+            text-align: center;
+            background:rgba(255, 255, 255, .95);
+            padding: 20px;
+            border-radius: 10px;
+            max-width:350px;
+            box-shadow: 6px 6px 2px 1px rgba(255, 17, 0, 0.548);
+        }
+        .logo{
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        p{
+            color: #666;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        input[type="email"]{
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button{
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2be250;
+            color: black;
+            cursor: pointer;
+            font-weight: bold;
+            transform: scale(1);
+            transition-duration: .3s;
+            transition-timing-function: ease-in-out;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+
+        button:hover{
+            background-color: #12cf47bb;
+            transform: scale(1.05);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <img class="logo" src="https://www.chaicode.com/images/cup-logo.svg" alt="Chai Logo" width="100">
+            <h1>Coming Soon</h1>
+            <p>We are working hard to bring something amazing. Stay tuned!</p>
+            <form action="" id="notify-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Notify Me</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
