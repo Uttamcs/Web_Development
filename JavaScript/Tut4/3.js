@@ -46,9 +46,9 @@ for (let number of numbers) {
 console.log(sum);
 
 // for each 
-let numbers = [1, 2, 3, 4, 5];
-let sum = 0;
-numbers.forEach(function(number) {
-  sum += number;
-});
-console.log(sum);
+// let numbers = [1, 2, 3, 4, 5];
+// let sum = 0;
+// numbers.forEach(function(number) {
+//   sum += number;
+// });
+// console.log(sum);
