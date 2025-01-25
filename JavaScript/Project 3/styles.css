@@ -59,6 +59,35 @@ h2 {
 
 #cart-items {
   margin-bottom: 20px;
+  gap: 10px;
+  display: flex;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+.cart-item {
+  background-color: #333333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.item-desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-btn {
+  background-color: #ff0000;
+  border: none;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 #cart-total {

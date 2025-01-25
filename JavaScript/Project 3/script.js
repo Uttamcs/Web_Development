@@ -56,15 +56,18 @@ document.addEventListener("DOMContentLoaded", function () {
       let total = 0;
       emptyCart.classList.add("hidden");
       cartTotal.classList.remove("hidden");
+
       cart.forEach((product) => {
         const quantity = countFreq[product.id];
         total += product.price * quantity;
+
         const item = document.createElement("div");
         item.classList.add("cart-item");
         item.innerHTML = `
-          <span>${product.name}</span> - 
-          <span>$${product.price} x ${quantity}</span> = 
-          <span>$${product.price * quantity}</span>
+          <span class="item-desc">${product.name} - $${
+          product.price
+        } x ${quantity} = $${product.price * quantity}</span>
+          <button class="remove-btn" data-id="${product.id}">Remove</button>
         `;
         cartItems.appendChild(item);
       });
@@ -75,7 +78,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  cartItems.addEventListener("click", function (e) {
+    if (e.target.classList.contains("remove-btn")) {
+      const productId = parseInt(e.target.getAttribute("data-id"));
+      removeItem(productId);
+    }
+  });
+
+  function removeItem(productId) {
+    const index = cart.findIndex((product) => product.id === productId);
+    if (index !== -1) {
+      countFreq[productId]--;
+      if (countFreq[productId] === 0) {
+        delete countFreq[productId];
+        cart.splice(index, 1);
+      }
+      renderCart();
+    }
+  }
+
   checkoutBtn.addEventListener("click", function () {
+    if (cart.length === 0) {
+      alert("Your cart is empty. Add some items before checking out.");
+      return;
+    }
     alert("Thank you for shopping with us!");
     cart.length = 0;
     Object.keys(countFreq).forEach((key) => delete countFreq[key]);
