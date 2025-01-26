@@ -1,0 +1,14 @@
+#container{
+    background-color: azure;
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    color: black;
+    gap: 10px;
+    padding: 10%;
+    font-size: 40px;
+    border-radius: 10px;
+}
+#btn{
+    background-color: blue;
+}
