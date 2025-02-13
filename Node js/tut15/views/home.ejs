@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>URL Shortener</title>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen">
+
+    <div class="bg-gray-800 shadow-lg rounded-lg p-6 w-full max-w-lg text-center">
+        <h1 class="text-3xl font-bold mb-4 text-blue-400">URL Shortener</h1>
+
+        <form action="/url" method="POST" class="space-y-4">
+            <label for="url" class="block text-lg">Enter your Original URL:</label>
+            <input 
+                type="text" 
+                id="url" 
+                name="url" 
+                placeholder="https://example.com" 
+                required
+                class="w-full p-3 border border-gray-500 rounded-md bg-gray-700 text-white focus:ring focus:ring-blue-400"
+            >
+            <button 
+                type="submit" 
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md text-lg font-semibold transition"
+            >
+                Generate
+            </button>
+        </form>
+
+        <% if (id) { %>
+            <div class="mt-6 p-4 bg-gray-700 rounded-md text-lg">
+                <p>URL shortened to:</p>
+                <a 
+                    href="http://localhost:3000/<%= id %>" 
+                    target="_blank" 
+                    class="text-blue-300 hover:text-blue-500 font-medium break-words"
+                >
+                    http://localhost:3000/<%= id %>
+                </a>
+            </div>
+        <% } %>
+    </div>
+
+</body>
+</html>
