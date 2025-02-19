@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="https://w7.pngwing.com/pngs/339/876/png-transparent-login-computer-icons-password-login-black-symbol-subscription-business-model-thumbnail.png" type="image/x-icon">
+</head>
+<body class="bg-gray-900">
+    <div class="flex justify-center items-center h-screen">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-96">
+            <h2 class="text-2xl font-bold text-center text-white mb-4">Login to Your Account</h2>
+
+            <% if (typeof error !== 'undefined') { %>
+                <p class="text-red-400 text-sm text-center mb-4"><%= error %></p>
+            <% } %>
+
+            <form action="/login" method="POST">
+                <div class="mb-4">
+                    <label class="block text-gray-400 text-sm font-bold mb-2" for="email">
+                        Email
+                    </label>
+                    <input class="bg-gray-700 text-white border border-gray-600 rounded w-full py-2 px-3 focus:outline-none focus:border-blue-500" 
+                           type="email" name="email" required>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-400 text-sm font-bold mb-2" for="password">
+                        Password
+                    </label>
+                    <input class="bg-gray-700 text-white border border-gray-600 rounded w-full py-2 px-3 focus:outline-none focus:border-blue-500" 
+                           type="password" name="password" required>
+                </div>
+
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full" type="submit">
+                    Login
+                </button>
+            </form>
+
+            <p class="text-center text-gray-400 mt-4">
+                Don't have an account? <a href="/signup" class="text-blue-400 hover:text-blue-300">Sign up</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
